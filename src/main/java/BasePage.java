@@ -32,11 +32,14 @@ public class BasePage {
         return true;
     }
 
-
-
     void assertText(By element , String txt){
         wait.until(ExpectedConditions.presenceOfElementLocated(element));
         Assert.assertEquals(driver.findElement(element).getText(),txt);
+    }
+
+    String getText(By element){
+        wait.until(ExpectedConditions.presenceOfElementLocated(element));
+        return driver.findElement(element).getText();
     }
 }
 

@@ -54,10 +54,6 @@ public class Login extends BasePage {
         click(girisOtpClick);
         click(girisGonderBtn);
 
-        if (popUp(popUpClose)){
-            click(popUpClose);
-        }
-
         //TouchAction action= new TouchAction(driver);
         //action.press(271, 642).release().perform();
 
