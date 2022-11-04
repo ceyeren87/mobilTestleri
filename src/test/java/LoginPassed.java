@@ -5,7 +5,7 @@ import java.awt.*;
 public class LoginPassed extends DeviceSetup {
 
     @Test(priority = 1)
-    public void loginPassed() throws AWTException, InterruptedException {
+    public void loginPassed() throws Exception {
         Login login = new Login(driver);
         LoginTest loginRepository = new LoginTest(driver);
 

@@ -14,12 +14,6 @@ import java.awt.event.KeyEvent;
 
 public class Login extends BasePage {
 
-    public void hideKeyBoard()
-    {
-        try{driver.hideKeyboard();}
-        catch(Exception e){}
-    }
-
     public Login(AppiumDriver driver) {
         super(driver);
     }
@@ -32,9 +26,8 @@ public class Login extends BasePage {
     private By girisOtp = By.xpath("//android.widget.EditText[@content-desc=\"SMS Doğrulama Kodu\"]");
     private By girisOtpClick = By.xpath("//android.view.View[@content-desc=\"Telefon Numarası\"]");
     private By girisGonderBtn = By.xpath("//android.widget.Button[@content-desc=\"Gönder\"]");
-    private By popUpClose = By.xpath("//android.view.ViewGroup[@content-desc=\"errorModalClose\"]/android.widget.ImageView");
 
-    public void loginCase(String user) throws InterruptedException, AWTException {
+    public void loginCase(String user) throws InterruptedException {
 
         click(tanitimiGec);
         Thread.sleep(5000);
@@ -53,6 +46,7 @@ public class Login extends BasePage {
         sendKeys(girisOtp,"123456");
         click(girisOtpClick);
         click(girisGonderBtn);
+        //Thread.sleep(10000);
 
         //TouchAction action= new TouchAction(driver);
         //action.press(271, 642).release().perform();
