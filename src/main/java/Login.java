@@ -22,7 +22,7 @@ public class Login extends BasePage {
     //Random Pop up Close
     public void closeGiveawayPopup() throws Exception {
         try {
-            Thread.sleep(5000);
+            Thread.sleep(6000);
             List<WebElement> elements = driver.findElements(By.xpath("//android.view.View[@content-desc=\"İlgilenmiyorum\"]"));
             for (WebElement element : elements) {
                 if (element.isDisplayed()) {

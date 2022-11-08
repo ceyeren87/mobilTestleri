@@ -16,6 +16,5 @@ public class LoginTest extends BasePage {
     public void loginTest() throws Exception {
 
         assertText(loginDogrula,"Ana Sayfa");
-
     }
 }
