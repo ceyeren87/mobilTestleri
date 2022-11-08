@@ -19,7 +19,7 @@ public class Login extends BasePage {
         super(driver);
     }
 
-    //Random Pop up
+    //Random Pop up Close
     public void closeGiveawayPopup() throws Exception {
         try {
             Thread.sleep(5000);
@@ -53,12 +53,13 @@ public class Login extends BasePage {
         click(sifreClick);
         //hideKeyBoard();
         Thread.sleep(3000);
-        touchAction.tap(670,1926).perform();
-        touchAction.tap(675,1791).perform();
-        touchAction.tap(680,1667).perform();
-        touchAction.tap(405,1932).perform();
-        touchAction.tap(410,1802).perform();
-        touchAction.tap(415,1667).perform();
+        touchAction.press(670,1926).perform();
+        touchAction.press(675,1791).perform();
+        touchAction.press(680,1667).perform();
+        touchAction.press(405,1932).perform();
+        touchAction.press(410,1802).perform();
+        touchAction.press(415,1667).perform();
+        touchAction.press(0,0).perform();
         sendKeys(girisOtp,"123456");
         click(girisOtpClick);
         click(girisGonderBtn);
