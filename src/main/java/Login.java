@@ -11,11 +11,27 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
+import java.util.List;
 
 public class Login extends BasePage {
 
     public Login(AppiumDriver driver) {
         super(driver);
+    }
+
+    //Random Pop up
+    public void closeGiveawayPopup() throws Exception {
+        try {
+            Thread.sleep(5000);
+            List<WebElement> elements = driver.findElements(By.xpath("//android.view.View[@content-desc=\"İlgilenmiyorum\"]"));
+            for (WebElement element : elements) {
+                if (element.isDisplayed()) {
+                    element.click();
+                }
+            }
+        } catch (Exception e) {
+            throw (e);
+        }
     }
 
     private By tanitimiGec = By.xpath("//android.view.View[@content-desc=\"Tanıtımı Geç\"]");
@@ -27,7 +43,7 @@ public class Login extends BasePage {
     private By girisOtpClick = By.xpath("//android.view.View[@content-desc=\"Telefon Numarası\"]");
     private By girisGonderBtn = By.xpath("//android.widget.Button[@content-desc=\"Gönder\"]");
 
-    public void loginCase(String user) throws InterruptedException {
+    public void loginCase(String user) throws Exception {
 
         click(tanitimiGec);
         Thread.sleep(5000);
@@ -47,6 +63,7 @@ public class Login extends BasePage {
         click(girisOtpClick);
         click(girisGonderBtn);
         //Thread.sleep(10000);
+        closeGiveawayPopup();
 
         //TouchAction action= new TouchAction(driver);
         //action.press(271, 642).release().perform();
